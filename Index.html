@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BTC Deposit Confirmation - Zengo Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #141852 0%, #23265b 100%);
+      color: #f6f7fb;
+      font-family: 'San Francisco', 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 480px;
+      margin: 32px auto;
+      background: rgba(30, 34, 74, 0.98);
+      border-radius: 22px;
+      padding: 32px 24px;
+      box-shadow: 0 6px 24px rgba(20, 24, 82, 0.13);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .header img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #59e3ff;
+      letter-spacing: 0.5px;
+    }
+    .summary {
+      background: rgba(44, 48, 92, 0.96);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 22px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 1.04em;
+    }
+    .summary-row:last-child {
+      margin-bottom: 0;
+    }
+    .highlight {
+      color: #59e3ff;
+      font-weight: bold;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin: 20px 0 26px 0;
+      justify-content: center;
+    }
+    .action-btn {
+      flex: 1 1 48%;
+      background: #59e3ff;
+      color: #141852;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.08em;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .action-btn.withdraw {
+      background: #fff;
+      color: #23265b;
+      border: 2px solid #59e3ff;
+    }
+    .token-table {
+      width: 100%;
+      margin-top: 10px;
+      border-collapse: collapse;
+      background: rgba(44, 48, 92, 0.93);
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0.99em;
+    }
+    .token-table th, .token-table td {
+      padding: 10px 8px;
+      text-align: left;
+    }
+    .token-table th {
+      color: #59e3ff;
+      background: rgba(38, 41, 80, 0.95);
+      font-weight: 600;
+    }
+    .token-table tr:not(:last-child) td {
+      border-bottom: 1px solid #23265b;
+    }
+    .security-tip {
+      margin: 18px 0 12px 0;
+      background: rgba(255,255,255,0.08);
+      padding: 14px 15px;
+      border-radius: 8px;
+      color: #ffcf00;
+      font-size: 0.98em;
+      font-weight: 500;
+      text-align: center;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      color: #bbb;
+      font-size: 0.98em;
+    }
+    a {
+      color: #61e3ff;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 16px 4vw;
+      }
+      .summary, .token-table {
+        font-size: 0.98em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <!-- Replace the src with your Zengo logo if available -->
+      <img src="https://zengo.com/wp-content/uploads/2022/03/logo-zengo.svg" alt="Zengo Logo">
+      <h1>Bitcoin Deposit Received</h1>
+      <div style="color:#b7f5ff; font-size:1.02em;">Your BTC deposit has been confirmed!</div>
+    </div>
+    <div class="summary">
+      <div class="summary-row">
+        <span>Amount</span>
+        <span class="highlight">0.015 BTC <span style="color:#fce672;">($600.00)</span></span>
+      </div>
+      <div class="summary-row">
+        <span>Date</span>
+        <span>2025-05-27 17:42 UTC</span>
+      </div>
+      <div class="summary-row">
+        <span>Deposit Address</span>
+        <span>
+          <a href="https://www.blockchain.com/explorer/addresses/btc/bc1qxyzabcd" target="_blank">bc1qxyz...abcd</a>
+        </span>
+      </div>
+      <div class="summary-row">
+        <span>Transaction Hash</span>
+        <span>
+          <a href="https://www.blockchain.com/btc/tx/txhashhere" target="_blank">View in Explorer</a>
+        </span>
+      </div>
+      <div class="summary-row">
+        <span>Confirmations</span>
+        <span>4</span>
+      </div>
+      <div class="summary-row">
+        <span>Network Fee</span>
+        <span>0.00002 BTC</span>
+      </div>
+      <div class="summary-row">
+        <span>Portfolio Balance</span>
+        <span class="highlight">0.50 BTC <span style="color:#fce672;">($20,000.00)</span></span>
+      </div>
+    </div>
+
+  <div class="actions">
+      <a href="#" class="action-btn">Deposit</a>
+      <a href="#" class="action-btn withdraw">Withdraw</a>
+    </div>
+
+  <div style="margin-top:14px; margin-bottom:8px; font-size:1.11em; color:#b7f5ff; font-weight:600;">
+      Current Holdings
+    </div>
+    <table class="token-table">
+      <tr>
+        <th>Token</th>
+        <th>Balance</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>BTC</td>
+        <td>0.50</td>
+        <td>$20,000</td>
+      </tr>
+      <tr>
+        <td>ETH</td>
+        <td>3.00</td>
+        <td>$11,250</td>
+      </tr>
+      <tr>
+        <td>USDC</td>
+        <td>1,000.00</td>
+        <td>$1,000</td>
+      </tr>
+    </table>
+
+  <div class="security-tip">
+      <strong>Security Tip:</strong> Never share your private keys or recovery phrases with anyone. Zengo support will never ask for them.
+    </div>
+
+<div class="footer">
+      Need help? <a href="#">Contact Support</a>
+    </div>
+  </div>
+</body>
+</html>
